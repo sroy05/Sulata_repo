@@ -12,5 +12,6 @@ public interface StudentService {
 	boolean addStudent(StudentVO studentvo);
 	boolean deleteStudent(int id);
 	boolean updateStudent(int id);
+	StudentVO getStudentByname(String name);
 
 }

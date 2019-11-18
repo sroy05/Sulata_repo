@@ -62,4 +62,17 @@ public class StudentServiceImpl implements StudentService{
 		return false;
 	}
 
+	@Override
+	public StudentVO getStudentByname(String name) {
+		// TODO Auto-generated method stub
+		StudentVO studentVO=null;
+		if(!name.equals(null)) {
+			 studentVO= studentRepo.findByFirstName(name).get(0);
+		}
+		else {
+			studentVO=null;
+		}
+		return studentVO;
+	}
+
 }
