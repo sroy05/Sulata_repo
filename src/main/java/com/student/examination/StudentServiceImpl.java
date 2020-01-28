@@ -14,6 +14,9 @@ public class StudentServiceImpl implements StudentService{
 	@Autowired
 	private StudentRepository studentRepo;
 	
+	@Autowired
+	private StudentDaoImpl studentDaoImpl;
+	
 	@Override
 	public List<StudentVO> retrieveAll() {
 		// TODO Auto-generated method stub
@@ -73,6 +76,13 @@ public class StudentServiceImpl implements StudentService{
 			studentVO=null;
 		}
 		return studentVO;
+	}
+
+	@Override
+	public List<AddressVO> getAddressList(long id) {
+		// TODO Auto-generated method stub
+		
+		return studentDaoImpl.getAddressList(id);
 	}
 
 }

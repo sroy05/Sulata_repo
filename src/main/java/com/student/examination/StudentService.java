@@ -13,5 +13,6 @@ public interface StudentService {
 	boolean deleteStudent(int id);
 	boolean updateStudent(int id);
 	StudentVO getStudentByname(String name);
+	List<AddressVO> getAddressList(long id);
 
 }

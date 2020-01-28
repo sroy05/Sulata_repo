@@ -15,4 +15,7 @@ public interface StudentRepository extends CrudRepository<StudentVO, Long> {
 	
 	@Query("select s from StudentVO s where s.id = :id")
 	List<StudentVO> findStudentById(@Param(value="id")long id);
+	
+	
+	
 }

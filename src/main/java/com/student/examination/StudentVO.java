@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,6 +34,11 @@ public class StudentVO {
 	private String standard;
 	@Column(name="ROLL_NO")
 	private int rollNo;
+	@OneToMany(mappedBy="studentVO",
+			cascade=CascadeType.PERSIST,
+			fetch = FetchType.LAZY)
+	private List<AddressVO> addressVo;
+	
 	
 	@OneToMany(
 			mappedBy="studentvo",	

@@ -12,11 +12,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 repositoryBaseClass = ExaminationRepositoryImpl.class)*/
 public class ExaminationApplication {
 
-	public static void main(String[] args) {
+		public static void main(String[] args) {
 		ConfigurableApplicationContext context=SpringApplication.run(ExaminationApplication.class, args);
-		for (String string1 : context.getBeanDefinitionNames()) {
+/*		for (String string1 : context.getBeanDefinitionNames()) {
 			System.out.println("String 1:"+string1);
-		}
+		}*/
 		//System.out.println(context.getEffectiveMajorVersion());
 	}
 
