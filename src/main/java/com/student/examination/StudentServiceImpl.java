@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 
@@ -84,5 +84,13 @@ public class StudentServiceImpl implements StudentService{
 		
 		return studentDaoImpl.getAddressList(id);
 	}
+
+	@Override
+	public List<StudentVO> findByAndSort(String lastname, Sort sort) {
+		// TODO Auto-generated method stub
+		return studentRepo.findByAndSort("R", new Sort("lastName")); 
+		
+	}
+
 
 }

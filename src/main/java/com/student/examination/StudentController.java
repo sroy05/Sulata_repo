@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -96,10 +97,14 @@ public class StudentController {
 		
 	}
 	
-	@GetMapping("/Student/{id}")
+	@GetMapping("/Student/address/{id}")
 	public List<AddressVO>  getAddressById(@PathVariable  long id){
 		
 		return studentService.getAddressList(id);
 	}
 	
+	@GetMapping("/student/lastname/{lastName}")
+	public List<StudentVO> sorting(@PathVariable String lastName){
+		return studentService.findByAndSort(lastName, new Sort("lastName"));
+	}
 }
